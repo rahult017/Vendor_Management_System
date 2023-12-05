@@ -42,5 +42,5 @@
     python  manage.py create_purchase_orders ## to create a sample data for purchase order
 
 $. Run test case :
-
+    
     python test 
