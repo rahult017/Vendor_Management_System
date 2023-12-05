@@ -42,4 +42,4 @@
 
 $. Run test case :
     
-    python test 
+    python manage.py test
