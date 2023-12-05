@@ -25,5 +25,22 @@
    ```bash
    git clone https://github.com/rahult017/Vendor_Management_System.git
    cd Vendor_Management_System
-   cd venv/Script/activate
-   pip install -r requirements.txt
+   
+
+2. Setup the project:
+
+    cd Vendor_Management_System
+    cd venv/Script/activate
+    pip install -r requirements.txt
+    python manage.py makemigrations vendor_app
+    python manage.py migrate
+    python manage.py createsuperuser ## to create a super user.
+
+3. Create Sample Data for project:
+
+    python manage.py create_vendor_data ## to create a sample data for vendor profile management
+    python  manage.py create_purchase_orders ## to create a sample data for purchase order
+
+$. Run test case :
+
+    python test 
