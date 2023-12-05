@@ -5,7 +5,7 @@ from django.db.models import Sum
 class PurchaseOrder(models.Model):
     po_number = models.CharField(max_length=50, unique=True)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    order_date = models.DateTimeField(auto_now_add=True,null=True)
+    order_date = models.DateTimeField(auto_now_add=True)
     delivery_date = models.DateTimeField()
     items = models.JSONField()
     quantity = models.IntegerField()
