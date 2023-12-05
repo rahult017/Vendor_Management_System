@@ -16,13 +16,5 @@ class Vendor(models.Model):
     average_response_time = models.FloatField(default=0)
     fulfillment_rate = models.FloatField(default=0)
 
-    # def update_performance_metrics(self):
-    #     # Calculate and update performance metrics
-    #     self.on_time_delivery_rate = calculate_on_time_delivery_rate(self)
-    #     self.quality_rating_avg = calculate_quality_rating_avg(self)
-    #     self.average_response_time = calculate_average_response_time(self)
-    #     self.fulfillment_rate = calculate_fulfillment_rate(self)
-    #     self.save()
-
     def __str__(self) -> str:
         return self.name
