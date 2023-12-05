@@ -26,7 +26,6 @@
    git clone https://github.com/rahult017/Vendor_Management_System.git
    cd Vendor_Management_System
    
-
 2. Setup the project:
 
     cd Vendor_Management_System
