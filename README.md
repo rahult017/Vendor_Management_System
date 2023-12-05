@@ -1,7 +1,6 @@
 # Vendor Management System with Performance Metrics
 
 1.Vendor Profile Management
-
     POST /api/vendors/: Create a new vendor.
     GET /api/vendors/: List all vendors.
     GET /api/vendors/{vendor_id}/: Retrieve a specific vendor's details.
@@ -10,8 +9,7 @@
     GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance 
 
 2.Purchase Order Tracking
-
-    POST /api/purchase_orders/: Create a purchase order.
+    POST /api/purchase_ordrs/: Create a purchase order.
     GET /api/purchase_orders/: List all purchase orders with an option to filter by vendor.
     GET /api/purchase_orders/{po_id}/: Retrieve details of a specific purchase order.
     PUT /api/purchase_orders/{po_id}/: Update a purchase order.
@@ -25,16 +23,26 @@
    ```bash
    git clone https://github.com/rahult017/Vendor_Management_System.git
    cd Vendor_Management_System
-   cd venv/Script/activate
-   pip  install -r requirements.txt
 
-2. Setup the project:
+2. Set up the virtual environment and install dependencies:
+    # For Unix/Linux
+    source venv/bin/activate
+
+    # For Windows
+    .\venv\Scripts\activate
+
+    pip install -r requirements.txt
+
+3. Apply migrations and create a superuser account::
 
    python manage.py makemigrations vendor_app
    python manage.py migrate
    python manage.py createsuperuser
-   python manage.py runserver
 
+4. Run the development server
+
+    python manage.py runserver
+   
 3. Create Sample Data for project:
 
     python manage.py create_vendor_data ## to create a sample data for vendor profile management
