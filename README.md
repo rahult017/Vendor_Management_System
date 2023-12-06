@@ -7,7 +7,7 @@
     GET /api/vendors/{vendor_id}/: Retrieve a specific vendor's details.
     PUT /api/vendors/{vendor_id}/: Update a vendor's details
     DELETE /api/vendors/{vendor_id}/: Delete a vendor.
-    GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance 
+    
 
 2.Purchase Order Tracking
 
@@ -16,7 +16,12 @@
     GET /api/purchase_orders/{po_id}/: Retrieve details of a specific purchase order.
     PUT /api/purchase_orders/{po_id}/: Update a purchase order.
     DELETE /api/purchase_orders/{po_id}/: Delete a purchase order.
-    POST /api/purchase_orders/{po_id}/acknowledge/ : 
+    
+
+3. Vendor Performance
+
+    GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance.
+    POST /api/purchase_orders/{po_id}/acknowledge/ : create vendors to acknowledge POs.
 
 ## Installation
 

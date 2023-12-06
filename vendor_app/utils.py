@@ -1,10 +1,10 @@
 from django.db import models
-from django.db.models import Avg, Count
+from django.db.models import Avg
 
 def calculate_on_time_delivery_rate(vendor):
     completed_pos = vendor.purchaseorder_set.filter(status='completed')
     on_time_deliveries = completed_pos.filter(delivery_date__lte=models.F('acknowledgment_date'))
-    on_time_delivery_rate = on_time_deliveries.count() / completed_pos.count() if completed_pos.count() > 0 else 0
+    on_time_delivery_rate = on_time_deliveries.count() / completed_pos.count()  if completed_pos.count() > 0 else 0
     return on_time_delivery_rate
 
 def calculate_quality_rating_avg(vendor):
