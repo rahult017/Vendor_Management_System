@@ -1,5 +1,8 @@
 from django.db import models
 from django.db.models import Avg
+import logging
+
+logger = logging.getLogger(__name__)
 
 def calculate_on_time_delivery_rate(vendor):
     completed_pos = vendor.purchaseorder_set.filter(status='completed')

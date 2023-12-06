@@ -3,6 +3,9 @@ from vendor_app.models import Vendor,PurchaseOrder,HistoricalPerformance
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from .models import Vendor,PurchaseOrder,HistoricalPerformance
+import logging
+
+logger = logging.getLogger(__name__)
 
 class VendorResource(resources.ModelResource):
     class Meta:

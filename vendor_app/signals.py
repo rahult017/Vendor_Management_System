@@ -11,6 +11,9 @@ from vendor_app.utils import (
 )
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 receiver(post_save, sender=User)

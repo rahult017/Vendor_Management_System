@@ -15,9 +15,11 @@ class Command(BaseCommand):
         vendors = Vendor.objects.all()
 
         for vendor in vendors:
-            
-            for _ in range(1):
-
+            # Shuffle the list of status values to introduce more randomness
+            for _ in range(1, 11):
+                status_options = ['pending', 'in_progress', 'completed', 'cancelled']
+                random.shuffle(status_options)
+                # Check if the list is empty, shuffle again
                 po = PurchaseOrder.objects.create(
                     po_number=fake.uuid4(),
                     vendor=vendor,
@@ -25,7 +27,7 @@ class Command(BaseCommand):
                     delivery_date=timezone.now() + timezone.timedelta(days=random.randint(1, 30)),
                     items={'item': fake.word()},
                     quantity=random.randint(1, 100),
-                    status=random.choice(['pending', 'in_progress', 'completed', 'cancelled']),
+                    status=status_options.pop(),
                     quality_rating=random.choice([None, random.uniform(1, 5)]),
                     issue_date=fake.date_time_this_year(),
                     acknowledgment_date=timezone.now() + timezone.timedelta(days=random.randint(1, 30)),

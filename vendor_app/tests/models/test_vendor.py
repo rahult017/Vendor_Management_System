@@ -1,6 +1,9 @@
 from django.test import TestCase
 from vendor_app.models import Vendor
 from django.db.utils import IntegrityError
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class VendorModelTest(TestCase):
