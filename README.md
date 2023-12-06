@@ -33,6 +33,8 @@
 
 2. Set up the virtual environment and install dependencies:
 
+    To create virtual environment: python -m venv venv
+    
     # For Unix/Linux
     source venv/bin/activate
 
@@ -58,4 +60,8 @@
 
 $. Run test case :
     
-    python manage.py test
+    python manage.py test vendor_app.tests.models.test_vendor
+    python manage.py test vendor_app.tests.models.test_purchase
+    python manage.py test vendor_app.tests.serializers.test_vendor
+    python manage.py test vendor_app.tests.serializers.test_vendor
+    python manage.py test vendor_app.tests.views.test_views
