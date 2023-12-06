@@ -16,7 +16,8 @@ class Command(BaseCommand):
 
         for vendor in vendors:
             
-            for _ in range(10):
+            for _ in range(1):
+
                 po = PurchaseOrder.objects.create(
                     po_number=fake.uuid4(),
                     vendor=vendor,

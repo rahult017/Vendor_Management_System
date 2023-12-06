@@ -22,3 +22,4 @@ class PurchaseOrder(models.Model):
     
     def __str__(self):
         return f"PO#{self.po_number} for {self.vendor}"
+    

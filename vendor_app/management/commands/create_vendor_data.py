@@ -13,7 +13,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write(self.style.SUCCESS('Creating sample data...'))
 
-        for _ in range(10):
+        for _ in range(1):
             vendor = Vendor.objects.create(
                 name=fake.company(),
                 contact_details=fake.phone_number(),
