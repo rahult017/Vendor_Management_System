@@ -34,7 +34,7 @@
 2. Set up the virtual environment and install dependencies:
 
     To create virtual environment: python -m venv venv
-    
+
     # For Unix/Linux
     source venv/bin/activate
 
@@ -48,6 +48,7 @@
    python manage.py makemigrations vendor_app
    python manage.py migrate
    python manage.py createsuperuser
+
 
 4. Run the development server
 
