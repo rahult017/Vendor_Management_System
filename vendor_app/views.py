@@ -22,7 +22,6 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate, login
 
 
-
 # @api_view(['POST'])
 # def login_view(request):
 #     if request.method == 'POST':
