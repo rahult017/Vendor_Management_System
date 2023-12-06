@@ -72,7 +72,7 @@ def update_historical_performance(sender,instance,**kwargs):
             historical_performance.fulfillment_rate = fulfillment_rate
             historical_performance.save()
 
-    if instance.status == 'completed' or instance.status == 'acknowledged':
+    if instance.status == 'completed' or instance.acknowledgment_date:
         update_performance_metrics_batch(vendor)
 
 post_save.connect(create_auth_token,sender=User)
