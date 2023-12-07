@@ -2,8 +2,10 @@ from django.urls import path
 from .views import (vendor_list_create,vendor_detail,
                     vendor_performance,purchase_order_list_create,
                     purchase_order_detail,acknowledge_purchase)
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
+    path('token/',obtain_auth_token,name='obtain-token'),
     path('vendors/',vendor_list_create,name="vendor_list_create"),
     path('vendors/<int:vendor_id>/',vendor_detail,name='vendor_detail'),
     path('vendors/<int:vendor_id>/performance/', vendor_performance, name='vendor_performance'),
