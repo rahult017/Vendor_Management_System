@@ -64,8 +64,12 @@ To check how to use below api please refer to api_videos in the project.
 
 $. Run test case :
     
-    python manage.py test vendor_app.tests.models.test_vendor
-    python manage.py test vendor_app.tests.models.test_purchase
-    python manage.py test vendor_app.tests.serializers.test_vendor
-    python manage.py test vendor_app.tests.serializers.test_purchaseorder
-    python manage.py test vendor_app.tests.views.test_views
+    python manage.py test vendor_app.tests.models.test_vendor_models
+    python manage.py test vendor_app.tests.models.test_purchase_models
+    python manage.py test vendor_app.tests.serializers.test_serializer_vendor
+    python manage.py test vendor_app.tests.serializers.test_serializer_purchaseorder
+    python manage.py test vendor_app.tests.views.test_views_vendor
+    python manage.py test vendor_app.tests.views.test_views_purchaseorder
+    python manage.py test vendor_app.tests.test_utils
+    python manage.py test vendor_app.tests.test_signals
+
