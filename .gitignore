@@ -1,0 +1,12 @@
+.idea/
+__pycache__/
+db.sqlite3
+db.sqlite3-journal
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
