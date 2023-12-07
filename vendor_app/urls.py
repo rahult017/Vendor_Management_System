@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import (vendor_list_create,vendor_detail,
-                    vendor_performance,purchase_order_list_create,
+from vendor_app.views.vendor import (vendor_list_create,vendor_detail,vendor_performance)
+from vendor_app.views.purchaseorder import (purchase_order_list_create,
                     purchase_order_detail,acknowledge_purchase)
 from rest_framework.authtoken.views import obtain_auth_token
 
