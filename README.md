@@ -59,13 +59,13 @@ To check how to use below api please refer to api_videos in the project.
    
 3. Create Sample Data for project:
 
-    python manage.py create_vendor_data ## to create a sample data for vendor profile management
-    python  manage.py create_purchase_orders ## to create a sample data for purchase order
+    python manage.py create_vendor_data        ## to create a sample data for vendor profile management
+    python  manage.py create_purchase_orders   ## to create a sample data for purchase order
 
 $. Run test case :
     
     python manage.py test vendor_app.tests.models.test_vendor
     python manage.py test vendor_app.tests.models.test_purchase
     python manage.py test vendor_app.tests.serializers.test_vendor
-    python manage.py test vendor_app.tests.serializers.test_vendor
+    python manage.py test vendor_app.tests.serializers.test_purchaseorder
     python manage.py test vendor_app.tests.views.test_views
