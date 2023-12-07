@@ -15,6 +15,9 @@ class VendorModelTest(TestCase):
             address="Test Address",
             vendor_code="TEST123"
         )
+        
+    def tearDown(self):
+        self.vendor.delete()
     
     def test_vendor_str_method(self):
         expected_str = "Test Vendor"
