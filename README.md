@@ -4,6 +4,7 @@ To check how to use below api please refer to api_videos in the project.
 
 1.Vendor Profile Management
 
+    POST  /api/token/: Generate auth token.
     POST /api/vendors/: Create a new vendor.
     GET /api/vendors/: List all vendors.
     GET /api/vendors/{vendor_id}/: Retrieve a specific vendor's details.
