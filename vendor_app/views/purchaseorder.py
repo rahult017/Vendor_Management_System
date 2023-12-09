@@ -51,7 +51,7 @@ class PurchaseOrderDetailView(APIView):
         serializer = PurchaseOrderSerializer(purchase_order, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(serializer.data,status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, po_id, *args, **kwargs):
@@ -61,7 +61,11 @@ class PurchaseOrderDetailView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         purchase_order.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)    
+        if PurchaseOrder.objects.exists():
+            purchase_order = PurchaseOrder.objects.all()
+            serializer = PurchaseOrderSerializer(purchase_order, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_204_NO_CONTENT)  
 
 class AcknowledgePurchaseView(APIView):
     def post(self, request, po_id, *args, **kwargs):

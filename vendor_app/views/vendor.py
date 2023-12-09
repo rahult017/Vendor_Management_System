@@ -38,12 +38,20 @@ class VendorDetailView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, vendor_id, *args, **kwargs):
-        vendor = get_object_or_404(Vendor, pk=vendor_id)
+        try:
+            vendor = get_object_or_404(Vendor, pk=vendor_id)
+        except Vendor.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
         serializer = VendorSerializer(vendor)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, vendor_id, *args, **kwargs):
-        vendor = get_object_or_404(Vendor, pk=vendor_id)
+        try:
+            vendor = get_object_or_404(Vendor, pk=vendor_id)
+        except Vendor.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
         serializer = VendorSerializer(vendor, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -51,8 +59,16 @@ class VendorDetailView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, vendor_id, *args, **kwargs):
-        vendor = get_object_or_404(Vendor, pk=vendor_id)
+        try:
+            vendor = get_object_or_404(Vendor, pk=vendor_id)
+        except Vendor.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
         vendor.delete()
+        if Vendor.objects.exists():
+            vendors = Vendor.objects.all()
+            serializer = VendorSerializer(vendors, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_204_NO_CONTENT)
     
 class VendorPerformanceView(APIView):
