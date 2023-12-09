@@ -19,21 +19,7 @@ logger = logging.getLogger(__name__)
 receiver(post_save, sender=User)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
-        try:
-            Token.objects.create(user=instance).delete()
-            
-            # Create a new token with expiration (customize timedelta as needed)
-            expiration_time = timedelta(days=1)  # Adjust as needed
-            expiration_date = instance.date_joined + expiration_time
-
-            token = Token.objects.create(user=instance)
-            token.created = instance.date_joined
-            token.expires = expiration_date
-            token.save()
-        except Exception as e:
-            # Handle the exception (e.g., log it)
-            print(f"Error creating token for new user {instance}: {e}")
-
+        Token.objects.create(user=instance)
 
 receiver(post_save, sender=PurchaseOrder)
 def update_historical_performance(sender,instance,**kwargs):
