@@ -2,6 +2,8 @@
 
 ## Installation
 
+Prerequisite: *Python version 3.6 or higher is required.*
+
 1. Clone the repository:
 
    ```bash
