@@ -49,8 +49,8 @@ $. Run test case :
     python manage.py test vendor_app.tests.test_signals
 
 ## API Documentation.
-To check how to use below api please refer to how_test_api in the project.
 
+To understand how to utilize the API mentioned below, please refer to the tutorial video titled "how_test_api" 
 
 1.Vendor Profile Management
 
