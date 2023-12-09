@@ -21,7 +21,8 @@
     pip install -r requirements.txt
 
 3. Apply migrations and create a superuser account:
-
+   
+   ```bash
    python manage.py makemigrations vendor_app
    python manage.py migrate
    python manage.py createsuperuser
