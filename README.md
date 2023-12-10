@@ -52,7 +52,7 @@ $. Run test case :
 
 ## API Documentation.
 
-To understand how to utilize the API mentioned below, please refer to the tutorial video titled "how_test_api" 
+To understand how to utilize the API mentioned below, please refer to the tutorial video titled "how_test_api.mp4" 
 
 1.Vendor Profile Management
 
